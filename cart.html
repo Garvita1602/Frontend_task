@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="cart-page">
+            <h2>My Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <p>Total Items: <span id="total-items">0</span></p>
+
+                <p>Total Price: ₹<span id="total-price">0.00</span></p>
+                <P></P>
+                <p></p>
+                <p> </p>
+                <p> </p>
+                <p></p>
+                <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample cart items array
+        let cartItems = [];
+
+        // Add item to the cart
+        function addItemToCart(name, price) {
+            cartItems.push({
+                name,
+                price
+            });
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            cartItemsContainer.innerHTML = ''; // Clear the container before rendering
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <p>${item.name} - ₹${item.price}</p>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-items').textContent = cartItems.length;
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+
+        function checkout() {
+            if (cartItems.length > 0) {
+                console.log('Proceeding to checkout with the following items:', cartItems);
+            } else {
+                alert('Your cart is empty!');
+            }
+        }
+
+        addItemToCart('Black Kurti', 25000.00);
+        addItemToCart('Red Kurti', 15000.50);
+        addItemToCart('Red Gown', 40000.00);
+    </script>
+</body>
+
+</html>

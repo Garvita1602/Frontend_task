@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    <script>
+        // Initialize an empty cart
+        let cart = [];
+
+        // Function to add an item to the cart and redirect to cart page
+        function addToCart(itemName, price, imageUrl) {
+            // Add item to cart array
+            cart.push({
+                name: itemName,
+                price: price,
+                imageUrl: imageUrl
+            });
+
+            // Redirect to cart page
+            window.location.href = '/cart.html';
+        }
+
+        // Example function to populate the cart
+        function populateCart() {
+            let cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = ''; // Clear the container
+
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <img src="${item.imageUrl}" alt="${item.name}" />
+                    <div class="item-details">
+                        <p class="item-name">${item.name}</p>
+                        <p class="item-price">${item.price}</p>
+                    </div>
+                `;
+                cartContainer.appendChild(itemElement);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="dresses-design-collection">
+        <div class="banner">
+            <img class="rectangle-4" src="rectangle-40.png" />
+            <img class="rectangle-1" src="rectangle-10.png" />
+            <img class="rectangle-3" src="rectangle-30.png" />
+            <img class="rectangle-2" src="rectangle-20.png" />
+            <img class="rectangle-5" src="rectangle-50.png" />
+            <img class="rectangle-6" src="rectangle-60.png" />
+            <div class="frame-5">
+                <div class="shop-now">SHOP NOW</div>
+            </div>
+            <div class="new-fashion-collection">
+                <span>
+            <span class="new-fashion-collection-span">
+              NEW
+              <br />
+            </span>
+                <span class="new-fashion-collection-span2">
+              FASHION
+              <br />
+              COLLECTION
+            </span>
+                </span>
+            </div>
+        </div>
+        <div class="top-bar">
+            <img class="designer-logo-1" src="designer-logo-10.png" />
+            <a href="index.html" class="home-link">
+                <div class="home">Home</div>
+            </a>
+            <a href="index.html" class="kurti-link">
+                <div class="kurti">Kurti</div>
+            </a>
+            <a href="index.html" class="gown-link">
+                <div class="gown">Gown</div>
+            </a>
+            <a href="index.html" class="sraee-link">
+                <div class="saree">Saree</div>
+            </a>
+            <a href="index.html" class="jewellery-link">
+                <div class="jewellery">Jewellery</div>
+            </a>
+            <div class="frame-2">
+                <a href="/cart.html" class="sign-up">CART</a>
+            </div>
+
+            <div class="frame-3">
+                <a href="/signIn.html" class="sign-in">Sign in</a>
+            </div>
+        </div>
+        <div class="frame-10">
+            <div class="long-kurti-collection">Long Kurti Collection</div>
+            <div class="see-all">See all</div>
+        </div>
+        <div class="frame-23">
+            <div class="category">Category</div>
+            <div class="see-all">See all</div>
+        </div>
+        <div class="frame-15">
+            <div class="short-kurti-collection">Short Kurti Collection</div>
+            <div class="see-all">See all</div>
+        </div>
+        <div class="frame-12">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-70.png" />
+                <div class="green-long-kurti">Green Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-80.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="black-long-kurti">Black Long Kurti</div>
+                <div class="frame-11">
+
+                    <button onclick="addToCart('Black Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-81.png" />
+                <div class="off-white-long-kurti">Off -White Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Off -White Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-82.png" />
+                <div class="baby-pink-long-kurti">Baby Pink Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Baby Pink Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-13">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-71.png" />
+                <div class="green-long-kurti">Green Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-83.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="black-long-kurti">Black Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Black Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-84.png" />
+                <div class="green-long-kurti">Green Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-85.png" />
+                <div class="green-long-kurti">Green Long Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Long Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-14">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-72.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-86.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-87.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-88.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-16">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-73.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-89.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-810.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-811.png" />
+                <div class="short-kurti">Short Kurti</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Short Kurti', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-18">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-74.png" />
+                <div class="red-gown">Red Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Red Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-812.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-813.png" />
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-814.png" />
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-19">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-75.png" />
+                <div class="red-gown">Red Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Red Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-815.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-816.png" />
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-817.png" />
+                <div class="green-gown">Green Gown</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Green Gown', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-21">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-76.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-818.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-819.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-820.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-22">
+            <div class="frame-6">
+                <img class="rectangle-7" src="rectangle-77.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-7">
+                <img class="rectangle-8" src="rectangle-821.png" />
+                <div class="_1-250-002">৳1,250.00</div>
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-8">
+                <img class="rectangle-8" src="rectangle-822.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+            <div class="frame-9">
+                <img class="rectangle-8" src="rectangle-823.png" />
+                <div class="saree2">Saree</div>
+                <div class="frame-11">
+                    <button onclick="addToCart('Saree', '৳1,250.00', 'rectangle-80.png')">Add to Cart</button>
+
+                </div>
+                <div class="_1-250-00">৳1,250.00</div>
+            </div>
+        </div>
+        <div class="frame-17">
+            <div class="gown-collection">Gown Collection</div>
+            <div class="see-all">See all</div>
+        </div>
+        <div class="frame-20">
+            <div class="saree-collection">Saree Collection</div>
+            <div class="see-all">See all</div>
+        </div>
+        <div class="frame-36">
+            <div class="frame-26">
+                <img class="ellipse-1" src="ellipse-10.png" />
+                <div class="frame-31">
+                    <div class="long-kurti">Long Kurti</div>
+                </div>
+            </div>
+            <div class="frame-27">
+                <img class="ellipse-12" src="ellipse-11.png" />
+                <div class="frame-33">
+                    <div class="short-kurti2">Short Kurti</div>
+                </div>
+            </div>
+            <div class="frame-28">
+                <img class="ellipse-12" src="ellipse-12.png" />
+                <div class="frame-32">
+                    <div class="saree3">Saree</div>
+                </div>
+            </div>
+            <div class="frame-29">
+                <img class="ellipse-12" src="ellipse-13.png" />
+                <div class="frame-34">
+                    <div class="gown2">Gown</div>
+                </div>
+            </div>
+            <div class="frame-30">
+                <img class="ellipse-12" src="ellipse-14.png" />
+                <div class="frame-35">
+                    <div class="jewellery2">Jewellery</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="about">About</div>
+        <div class="group-1">
+            <div class="about-us">About Us</div>
+            <div class="our-story">Our Story</div>
+            <div class="career">Career</div>
+            <div class="our-team">Our Team</div>
+        </div>
+        <div class="frame-24">
+            <div class="write-your-feedback">Write your feedback</div>
+            <div class="frame-25">
+                <div class="feedback">Send</div>
+            </div>
+        </div>
+        <div class="feedback2">Feedback</div>
+        <div class="group-2">
+            <div class="privacy-policy">Privacy Policy</div>
+            <div class="terms-condition">
+                <span>
+            <span class="terms-condition-span">Terms</span>
+                <span class="terms-condition-span2">&amp;</span>
+                <span class="terms-condition-span3">Condition</span>
+                </span>
+            </div>
+            <div class="blog">Blog</div>
+            <div class="faq">FAQ</div>
+        </div>
+        <div class="usefull-links">Usefull Links</div>
+        <div class="group-4">
+            <div class="facebook">Facebook</div>
+            <div class="instagram">Instagram</div>
+            <div class="youtube">Youtube</div>
+            <div class="linkedin">Linkedin</div>
+        </div>
+        <div class="follow-us">Follow Us</div>
+        <div class="group-3">
+            <div class="address">
+                <span>
+            <span class="address-span">Address:</span>
+                <span class="address-span2">
+              Pune, Maharashtra
+            </span>
+                </span>
+            </div>
+            <div class="phone-8801345678902">
+                <span>
+            <span class="phone-8801345678902-span">Phone:</span>
+                <span class="phone-8801345678902-span2">+8801345678902</span>
+                </span>
+            </div>
+            <div class="email-info-sareeghor-com">
+                <span>
+            <span class="email-info-sareeghor-com-span">Email:</span>
+                <span class="email-info-sareeghor-com-span2"></span>
+                <span class="email-info-sareeghor-com-span3">info@Mytalorzone.com</span>
+                </span>
+            </div>
+        </div>
+        <div class="contact">Contact</div>
+        <div class="rectangle-9"></div>
+    </div>
+
+</body>
+
+</html>
